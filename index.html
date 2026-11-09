@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>IBM Bob Catch Challenge</title>
+
+    <link rel="stylesheet" href="Style.css">
+</head>
+
+<body>
+
+    <main class="game-wrapper">
+
+        <header class="game-header">
+            <div>
+                <p class="eyebrow">Built with IBM Bob</p>
+                <h1 id="gameTitle">IBM Bob Catch Challenge</h1>
+
+                <p class="subtitle">
+                    Collect the AI stars and avoid the bugs.
+                </p>
+            </div>
+
+            <button
+                id="howToPlayButton"
+                class="secondary-button"
+                type="button"
+            >
+                How to play
+            </button>
+        </header>
+
+        <section
+            class="scoreboard"
+            aria-label="Game information"
+        >
+            <div class="score-card">
+                <span class="score-label">Player</span>
+                <strong id="playerNameDisplay">Guest</strong>
+            </div>
+
+            <div class="score-card">
+                <span class="score-label">Score</span>
+                <strong id="scoreDisplay">0</strong>
+            </div>
+
+            <div class="score-card">
+                <span class="score-label">Lives</span>
+                <strong id="livesDisplay">3</strong>
+            </div>
+
+            <div class="score-card">
+                <span class="score-label">Time</span>
+                <strong>
+                    <span id="timeDisplay">45</span>s
+                </strong>
+            </div>
+        </section>
+
+        <section class="game-layout">
+
+            <aside class="control-panel">
+                <h2>Customize your game</h2>
+
+                <label for="playerNameInput">
+                    Player name
+                </label>
+
+                <input
+                    id="playerNameInput"
+                    type="text"
+                    maxlength="20"
+                    placeholder="Enter your name"
+                    autocomplete="off"
+                >
+
+                <label for="themeSelect">
+                    Theme
+                </label>
+
+                <select id="themeSelect">
+                    <option value="technology">
+                        Technology
+                    </option>
+
+                    <option value="cybersecurity">
+                        Cybersecurity
+                    </option>
+
+                    <option value="smartCity">
+                        Smart City
+                    </option>
+                </select>
+
+                <label for="speedSelect">
+                    Player speed
+                </label>
+
+                <select id="speedSelect">
+                    <option value="slow">
+                        Slow
+                    </option>
+
+                    <option value="normal" selected>
+                        Normal
+                    </option>
+
+                    <option value="fast">
+                        Fast
+                    </option>
+                </select>
+
+                <label for="pointsSelect">
+                    Points per item
+                </label>
+
+                <select id="pointsSelect">
+                    <option value="10">
+                        10 points
+                    </option>
+
+                    <option value="20">
+                        20 points
+                    </option>
+
+                    <option value="30">
+                        30 points
+                    </option>
+                </select>
+
+                <button
+                    id="startButton"
+                    class="primary-button"
+                    type="button"
+                >
+                    Start Game
+                </button>
+
+                <button
+                    id="resetButton"
+                    class="secondary-button"
+                    type="button"
+                >
+                    Reset Game
+                </button>
+
+                <p class="keyboard-help">
+                    Use the left and right arrow keys, A and D,
+                    or the on-screen buttons.
+                </p>
+            </aside>
+
+            <div class="game-area-container">
+
+                <div
+                    id="gameArea"
+                    class="game-area"
+                    tabindex="0"
+                    aria-label="Game area"
+                >
+                    <div
+                        id="startOverlay"
+                        class="overlay"
+                    >
+                        <div class="overlay-content">
+                            <div class="large-icon">🤖</div>
+
+                            <h2>Ready to play?</h2>
+
+                            <p>
+                                Collect the good items and avoid the bugs.
+                            </p>
+
+                            <p>
+                                Choose your settings and select
+                                <strong>Start Game</strong>.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div
+                        id="player"
+                        class="player"
+                        aria-label="Player"
+                    >
+                        🤖
+                    </div>
+                </div>
+
+                <div
+                    class="mobile-controls"
+                    aria-label="Movement controls"
+                >
+                    <button
+                        id="moveLeftButton"
+                        type="button"
+                        aria-label="Move left"
+                    >
+                        ← Move Left
+                    </button>
+
+                    <button
+                        id="moveRightButton"
+                        type="button"
+                        aria-label="Move right"
+                    >
+                        Move Right →
+                    </button>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <dialog id="instructionsDialog">
+        <div class="dialog-content">
+
+            <h2>How to play</h2>
+
+            <ul>
+                <li>Enter your name.</li>
+                <li>Select a game theme.</li>
+                <li>Select the player speed.</li>
+                <li>Select the points awarded per item.</li>
+                <li>Press Start Game.</li>
+                <li>Collect good items and avoid obstacles.</li>
+            </ul>
+
+            <p>
+                Keyboard controls:
+                <strong>Left Arrow</strong>,
+                <strong>Right Arrow</strong>,
+                <strong>A</strong>, and
+                <strong>D</strong>.
+            </p>
+
+            <button
+                id="closeDialogButton"
+                class="primary-button"
+                type="button"
+            >
+                Got it
+            </button>
+
+        </div>
+    </dialog>
+
+    <script src="game.js"></script>
+</body>
+</html>
